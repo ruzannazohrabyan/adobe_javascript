@@ -72,12 +72,12 @@ function getLongestSubstring(sentence) {
                 currentSubstring += chars[j];
             }
         }
-        if (currentSubstring.length >= longestSubestring.length) {
-            longestSubestring = currentSubstring;
+        if (currentSubstring.length >= longestSubstring.length) {
+            longestSubstring = currentSubstring;
         }
         currentSubstring = "";
     }
-    console.log(longestSubestring);
+    console.log(longestSubstring);
 }
 
 
@@ -113,8 +113,35 @@ numbers. Find biggest negative number of each array. Return product of that numb
 there is not any negative number in an array, ignore that one. Check that items of the
 given array are arrays.
 */
+function isValidArray(arr) {
+    return Array.isArray(arr);
+}
 
-//Not Completed
+function productNegative(arr) {
+    let p = 1;
+    let negativeArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (isValidArray(arr[i])) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] < 0) {
+                    negativeArray.push(arr[i][j]);
+                }
+            }
+            if (negativeArray.length !== 0) {
+                p *= Math.max(...negativeArray);
+                negativeArray.length = 0;
+            }
+        } else {
+            console.log("Invalid Argument");
+        }
+    }
+
+    if (p === 1) {
+        console.log("No Negatives");
+    } else {
+        console.log(p);
+    }
+}
 
 /*
 6. Write a JavaScript function to get all possible subsets of length 3 of the given array.
