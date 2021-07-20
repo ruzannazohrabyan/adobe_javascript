@@ -148,18 +148,16 @@ function productNegative(arr) {
 Assume that all elements in the array are unique.
 */
 function getAllPossibleSubarray(array) {
-    let generalArray = [];
+    let allArrays = [];
     if (array.length <= 3) {
         return array;
     }
-
     for (let i = 0; i < array.length; i++) {
-            for (let j = i+1; j < array.length; j ++) {
-                for(let k = j+1; k < array.length; k++) {
-                    generalArray.push([array[i], array[j], array[k]]);
-                }
+        for (let j = i + 1; j < array.length; j ++) {
+            for(let k = j + 1; k < array.length; k++) {
+                allArrays.push([array[i], array[j], array[k]]);
             }
-        
+        }
     }
-    return generalArray;
+    return allArrays;
 }
