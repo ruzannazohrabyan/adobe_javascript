@@ -147,5 +147,19 @@ function productNegative(arr) {
 6. Write a JavaScript function to get all possible subsets of length 3 of the given array.
 Assume that all elements in the array are unique.
 */
+function getAllPossibleSubarray(array) {
+    let generalArray = [];
+    if (array.length <= 3) {
+        return array;
+    }
 
-//Not Completed
+    for (let i = 0; i < array.length; i++) {
+            for (let j = i+1; j < array.length; j ++) {
+                for(let k = j+1; k < array.length; k++) {
+                    generalArray.push([array[i], array[j], array[k]]);
+                }
+            }
+        
+    }
+    return generalArray;
+}
