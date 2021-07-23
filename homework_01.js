@@ -39,7 +39,7 @@ last word(words can be separated by space, comma or hyphen).
 */
 
 function getLongestWord(str) {
-    let array = str.split(/[\s,]+/);
+    let array = str.split(/[\s,-]+/);
     let max = array[0].length;
     let index = 0;
 
