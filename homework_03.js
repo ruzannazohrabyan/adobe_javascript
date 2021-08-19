@@ -92,8 +92,8 @@ Find the count of missing numbers between minimum and maximum elements to make i
 
 function countOfMissingNumbers(array) {
     let countBetweenMaxAndMin = Math.max(...array) - Math.min(...array) - 1
-    let countInArrayWithoutMaxAndMin = array.length - 2
-    return  countBetweenMaxAndMin - countInArrayWithoutMaxAndMin
+    let arrayLengthWithoutMaxAndMin = array.length - 2
+    return  countBetweenMaxAndMin - arrayLengthWithoutMaxAndMin
 }
 
 /*
