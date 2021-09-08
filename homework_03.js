@@ -112,12 +112,11 @@ function getAllPossibleSubarrays(array, length) {
         }
     }
 
-    //let mask = 101 than temp have to been [3, 5]
+    //let mask = 00101 than temp have to been [3, 5]
     for(let i = mask.length-1; i >= 0 ; i--) {
         let temp = []
         let index = array.length-1;
         for(let j = mask[i].length-1; j >= 0; j--){
-            // console.log(mask[i][j])
             if(mask[i][j] === "1") {
                 temp.unshift(array[index])
             }
